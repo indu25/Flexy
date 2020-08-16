@@ -1,0 +1,177 @@
+<div class="card" id="app-class-schedule">
+  <div class="card-body">
+    <!-- <form [formGroup]="angForm" novalidate class="example-form example-full-width">-->
+    <!--<div>
+      <label class="col-md-4">Name</label>
+      <input type="text" class="form-control"
+             formControlName="Name"
+             #Name/>
+    </div>
+    <div
+      *ngIf="angForm.controls['Name'].invalid && (angForm.controls['Name'].dirty || angForm.controls['Name'].touched)"
+      class="alert alert-danger">
+      <div *ngIf="angForm.controls['Name'].errors.required">
+        Class Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4">Description </label>
+      <textarea class="form-control" rows=7 cols="5"
+                formControlName="Description"
+                #Description></textarea>
+    </div>
+    <div
+      *ngIf="angForm.controls['Description'].invalid && (angForm.controls['Description'].dirty || angForm.controls['Description'].touched)"
+      class="alert alert-danger">
+      <div *ngIf="angForm.controls['Description'].errors.required">
+        Class Description is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <mat-form-field class="example-full-width">
+        <mat-label>Favorite food</mat-label>
+        <input matInput #Topics placeholder="Ex. Pizza" value="Sushi">
+      </mat-form-field>
+    </div>
+    <div
+      *ngIf="angForm.controls['Topics'].invalid && (angForm.controls['Topics'].dirty || angForm.controls['Topics'].touched)"
+      class="alert alert-danger">
+      <div *ngIf="angForm.controls['Topics'].errors.required">
+        Class Topics are required.
+      </div>
+    </div>-->
+    <!--<div class="form-group">
+      <button type="submit" class="btn btn-primary"
+             (click)="addClass(Name.value, Description.value, Topics.value)"  [disabled]="angForm.pristine || angForm.invalid">
+        Create
+      </button>
+    </div>-->
+
+    <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+       {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+     </button>
+     <mat-vertical-stepper [linear]="isLinear" #stepper>
+       <mat-step [stepControl]="firstFormGroup">
+         <form [formGroup]="firstFormGroup">
+           <ng-template matStepLabel>Fill out your name</ng-template>
+           <mat-form-field>
+             <mat-label>Name</mat-label>
+             <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+           </mat-form-field>
+           <div>
+             <button mat-button matStepperNext>Next</button>
+           </div>
+         </form>
+       </mat-step>
+       <mat-step [stepControl]="secondFormGroup">
+         <form [formGroup]="secondFormGroup">
+           <ng-template matStepLabel>Fill out your address</ng-template>
+           <mat-form-field>
+             <mat-label>Address</mat-label>
+             <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                    required>
+           </mat-form-field>
+           <div>
+             <button mat-button matStepperPrevious>Back</button>
+             <button mat-button matStepperNext>Next</button>
+           </div>
+         </form>
+       </mat-step>
+       <mat-step>
+         <ng-template matStepLabel>Done</ng-template>
+         <p>You are now done.</p>
+         <div>
+           <button mat-button matStepperPrevious>Back</button>
+           <button mat-button (click)="stepper.reset()">Reset</button>
+         </div>
+       </mat-step>
+     </mat-vertical-stepper>-->
+    <!--  </form>-->
+    <mat-vertical-stepper [linear]="isLinear" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel class="label-font">Select a Package</ng-template>
+          <mat-form-field appearance="fill">
+            <mat-label>Grade</mat-label>
+            <mat-select [(value)]="selected">
+              <mat-option>None</mat-option>
+              <mat-option value="option1">Grade1</mat-option>
+              <mat-option value="option2">Grade2</mat-option>
+              <mat-option value="option3">Grade3</mat-option>
+            </mat-select>
+          </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Subject</mat-label>
+              <mat-select [(value)]="selected">
+                <mat-option>None</mat-option>
+                <mat-option value="option1">Math</mat-option>
+                <mat-option value="option2">English</mat-option>
+                <mat-option value="option3">Computers</mat-option>
+              </mat-select>
+            </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Month</mat-label>
+                <mat-select [(value)]="selected">
+                  <mat-option>None</mat-option>
+                  <mat-option value="option1">Jan</mat-option>
+                  <mat-option value="option2">Feb</mat-option>
+                  <mat-option value="option3">March</mat-option>
+                </mat-select>
+              </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label>Year</mat-label>
+                  <mat-select [(value)]="selected">
+                    <mat-option>None</mat-option>
+                    <mat-option value="option1">2020</mat-option>
+                    <mat-option value="option2">2021</mat-option>
+                    <mat-option value="option3">2022</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Your Package</mat-label>
+                  <input matInput placeholder="PackageName_Comment" formControlName="firstCtrl" required>
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel class="label-font">Set Calendar</ng-template>
+          <mat-form-field>
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                   required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+          <ng-template matStepLabel class="label-font">Classes</ng-template>
+          <mat-form-field>
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                   required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel class="label-font">Finish</ng-template>
+        <p>You are now done.</p>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-step>
+    </mat-vertical-stepper>
+  </div>
+</div>
